@@ -65,6 +65,19 @@ FILTER(REGEX(?label , "parco archeologico" , "i"))<br>
 We then understood that these results referred to the <i>insediamenti</i> that are located in the Archaeological Parks, so we run a different query, looking under the class "Cultural Institute Or Site" to obtain more results:
 <br>
 <p>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#><br>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#><br>
+PREFIX cis: <http://dati.beniculturali.it/cis/><br>
+<br>
+SELECT DISTINCT ?cp ?label ?depiction<br>
+WHERE<br>
+{?cp rdfs:label ?label ;<br>
+rdf:type cis:CulturalInstituteOrSite .<br>
+FILTER(REGEX(?label , "parco archeologico" , "i"))<br>
+OPTIONAL {?cp foaf:depiction ?depiction}<br>
+} <br>
+ORDER BY (?label)<br>
+LIMIT 250<br>
 <img src="query numero3.jpeg" style=width="300" height="300" ;
 <br>
 <br>
