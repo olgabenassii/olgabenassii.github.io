@@ -20,7 +20,7 @@ With our first query, we found all the Archaeological Parks present on ArCo, und
 <br> 
 <br> 
 <p>
-PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><http://www.w3.org/1999/02/22-rdf-syntax-ns#></a> <br>
+PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a> <br>
 PREFIX rdfs: <a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a>
 <br>
 PREFIX arco: <a href="https://w3id.org/arco/ontology/arco/">https://w3id.org/arco/ontology/arco/</a>
@@ -65,9 +65,12 @@ FILTER(REGEX(?label , "parco archeologico" , "i"))<br>
 We then understood that these results referred to the <i>insediamenti</i> that are located in the Archaeological Parks, so we run a different query, looking under the class "Cultural Institute Or Site" to obtain more results:
 <br>
 <p>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#><br>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#><br>
-PREFIX cis: <http://dati.beniculturali.it/cis/><br>
+PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+<br>
+PREFIX rdfs: <a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a>
+<br>
+PREFIX cis: <a href="http://dati.beniculturali.it/cis/">http://dati.beniculturali.it/cis/</a>
+<br>
 <br>
 SELECT DISTINCT ?cp ?label ?depiction<br>
 WHERE<br>
@@ -88,9 +91,12 @@ LIMIT 250<br>
 As a matter of fact, we found more results, and we were able to count them using the query: 
 <br>
 <br>
-<p>PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#><br>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#><br>
-PREFIX cis: <http://dati.beniculturali.it/cis/><br>
+<p>PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+<br>
+PREFIX rdfs: <a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a>
+<br>
+PREFIX cis: <a href="http://dati.beniculturali.it/cis/">http://dati.beniculturali.it/cis/</a> 
+<br>
 <br>
 SELECT (count(distinct ?cp) as ?count)<br>
 WHERE<br>
@@ -125,10 +131,49 @@ We found that, in this case, this <i>insediamento</i> is placed in the <i>Parco 
 To prove that the results found in the class "Cultural Institute or Site" were less detailed than those in the class "Cultural Property", we tried to<br>
 run a new query in both classes. The aim of these query was to find the Archaeological Parks in the Italian regions of Calabria and Campania. The first query gave us some results:
 <br>
+<br>
+PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+<br>
+PREFIX rdfs: <a href="uhttp://www.w3.org/2000/01/rdf-schema#rl">http://www.w3.org/2000/01/rdf-schema#</a>
+ <br>
+PREFIX arco: <a href="https://w3id.org/arco/ontology/arco/">https://w3id.org/arco/ontology/arco/</a>
+<br>
+<br>
+SELECT DISTINCT ?cp ?label<br>
+WHERE<br>
+{?cp rdfs:label ?label ;<br>
+rdf:type arco:CulturalProperty <br>
+{?cp arco:regionIdentifier "18" }<br>
+UNION<br>
+{?cp arco:regionIdentifier "15" }<br>
+FILTER(REGEX(?label , "parco archeologico" , "i"))<br>
+}<br>
+<br>
 <p><img src="query numero 5.jpeg" style=width="250" height="250" ; <br>
 <img src="risposta numero 5.jpeg" style=width="250" height="250" ;</p>
 <br>
 However, when running the same query but changing the class, we got no results: 
+<br>
+<br>
+PREFIX rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a>
+<br>
+PREFIX rdfs: <a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a> 
+<br>
+PREFIX cis: <a href="http://dati.beniculturali.it/cis/">http://dati.beniculturali.it/cis/</a>
+<br>
+PREFIX arco: <a href="urhttps://w3id.org/arco/ontology/arco/l">https://w3id.org/arco/ontology/arco/</a>
+<br>
+<br>
+SELECT DISTINCT ?cp ?label<br>
+WHERE<br>
+{?cp rdfs:label ?label ;<br>
+rdf:type cis:CulturalInstituteOrSite<br>
+{?cp arco:regionIdentifier "18" }<br>
+UNION<br>
+{?cp arco:regionIdentifier "15" }<br>
+FILTER(REGEX(?label , "parco archeologico" , "i"))<br>
+} <br>
+<br>
 <br>
 <p><img src="query numero 6.jpeg" style=width="250" height="250" ; <br>
 <img src="risposta numero 6.jpeg" style=width="150" height="150" ;</p>
@@ -172,9 +217,9 @@ Then, we proceeded to ask the relationship between the materials used and the Ar
 <br>
 Finally, we asked ChatGPT to transform the information in RDF:
 <br>
-<img src="ChatGPT generated knowledge.jpg" style=width="450" height="450">  <br>
+<img src="ChatGPT generated knowledge.jpeg" style=width="450" height="450">  <br>
 <br>
-<img src="ChatGPT generated knowledge answer.jpg" style=width="450" height="450">  <br>
+<img src="ChatGPT generated knowledge answer.jpeg" style=width="450" height="450">  <br>
 <br>
 This above is an example of <b>generated knowledge</b>.
 <br>
@@ -231,6 +276,6 @@ ChatGPT: <br>
 <img src="ChatGPT few shots.jpeg" style=width="450" height="450"> 
 <br>
 <br>
-We observed that ChatGPT was the only LLM to correctly answer us, as we can see from the official ISTAT <a href="https://www.adm.gov.it/portale/documents/20182/900944/Codici+ISTAT+delle+regioni.pdf/1e49f71e-d2a3-4a8c-b250-54e828312f92">website</a>
+We observed that ChatGPT was the only LLM to correctly answer us, as we can see from the official ISTAT list provided by the Agenzia delle Dogane e dei Monopoli <a href="https://www.adm.gov.it/portale/documents/20182/900944/Codici+ISTAT+delle+regioni.pdf/1e49f71e-d2a3-4a8c-b250-54e828312f92">website</a>
 <br>
 <img src="Istat regional code.jpeg" style=width="450" height="450"> 
