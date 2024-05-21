@@ -88,6 +88,16 @@ LIMIT 250<br>
 As a matter of fact, we found more results, and we were able to count them using the query: 
 <br>
 <br>
+<p>PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#><br>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#><br>
+PREFIX cis: <http://dati.beniculturali.it/cis/><br>
+<br>
+SELECT (count(distinct ?cp) as ?count)<br>
+WHERE<br>
+{?cp rdfs:label ?label ;<br>
+rdf:type cis:CulturalInstituteOrSite .<br>
+FILTER(REGEX(?label , "parco archeologico" , "i"))<br>
+}<br></p>
 <br>
 <img src="queryfour.jpeg" style=width="300" height="300" ;
 <br>
