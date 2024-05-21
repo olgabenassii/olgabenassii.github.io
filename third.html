@@ -6,7 +6,7 @@
   
 <body style="background-color:AntiqueWhite;">
   
-<link rel="icon" type="image/x-icon" href="favicon.ico.jpeg">
+<link rel="icon" type="image/x-icon" href="favicon.ico.jpeg"> ;
 <h1 style="text-align:center;"><b>Hello Again!</b> </h1>
 
 <p style="text-align:center;"> <i> This second page will be dedicated to delve into the details of the Metodology </i></p>
@@ -17,6 +17,22 @@ The first thing we did was define a specific area of knowledge we were particula
 <br>
 With our first query, we found all the Archaeological Parks present on ArCo, under the class "Cultural Property":</p><br>
 <br> 
+<br> 
+<br> 
+<p style="text-align:center;">PREFIX rdf: <a href="<http://www.w3.org/1999/02/22-rdf-syntax-ns#>"><http://www.w3.org/1999/02/22-rdf-syntax-ns#></a> <br>
+PREFIX rdfs: <a href="<http://www.w3.org/2000/01/rdf-schema#>"><http://www.w3.org/2000/01/rdf-schema#></a> <br>
+PREFIX arco: <a href="<https://w3id.org/arco/ontology/arco/>"><https://w3id.org/arco/ontology/arco/></a>
+<br> 
+<br>
+SELECT DISTINCT ?cp ?label ?depiction<br>
+WHERE<br>
+{?cp rdfs:label ?label ;<br>
+rdf:type arco:CulturalProperty .<br>
+FILTER(REGEX(?label , "parco archeologico" , "i"))<br>
+OPTIONAL {?cp foaf:depiction ?depiction}<br>
+} <br>
+ORDER BY (?label)</p>
+<br>
 <img src="query1.jpeg" style=width="350" height="350" ;
 <br>
 <img src="risultato 1.jpeg" style=width="400" height="400" ;
