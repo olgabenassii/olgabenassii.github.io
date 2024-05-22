@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<br>
 <title>Our Group Project_Second Page</title>
   
 <link rel="icon" type="image/x-icon" href="favicon.ico.jpeg"> ;  
@@ -200,6 +198,24 @@ This helped us finding out that the page of the <i>insediamento</i> could be imp
 Taking advantage of this, we created new triples based on the information provided by ChatGPT.
 <br>
 Concerning the chronological dating,  <button onclick="document.location='fourth.html'">here you can find our proposal</button>
+<br>
+<br>
+<p>ChatGPT also proposed to insert information about the <b>conservation status</b> of the archeological park under examination and about the latest interventions. While the LLMs were capable of providing some general knowledge, we are aware that field specialists should take care of such important data.<br>
+For this reason, we decided to propose only the labels that could be used to include such information for every insediamento:<br>
+                  arco-dd:proposedIntervention ;<br>
+                  arco-dd:hasConservationStatus.<br>
+These labels already exist in the ArCo ontology, as shown by this more general query that we executed:<br>
+<br>
+PREFIX arco-dd: <a href="https://w3id.org/arco/ontology/denotative-description/">https://w3id.org/arco/ontology/denotative-description/</a> 
+<br>
+SELECT*<br>
+WHERE<br>
+{<br>
+  ?cp rdfs:label ?label ;<br>
+    arco-dd:proposedIntervention ?proposedIntervention ;<br>
+    arco-dd:hasConservationStatus ?conservation .<br>
+}<br>
+LIMIT 100</p>
 <br>
 Regarding the materials, would like to introduce another new triple, with the predicate <b>"Arco-dd:hasMaterial" </b>.<br>
   
