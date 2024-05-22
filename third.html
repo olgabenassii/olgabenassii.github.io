@@ -201,9 +201,14 @@ Concerning the chronological dating,  <button onclick="document.location='fourth
 <br>
 <br>
 <p>ChatGPT also proposed to insert information about the <b>conservation status</b> of the archeological park under examination and about the latest interventions. While the LLMs were capable of providing some general knowledge, we are aware that field specialists should take care of such important data.<br>
-For this reason, we decided to propose only the labels that could be used to include such information for every insediamento:<br>
-                  arco-dd:proposedIntervention ;<br>
-                  arco-dd:hasConservationStatus.<br>
+For this reason, we decided to propose only the labels that could be used to include such information for every insediamento:
+<br>
+<br>
+
+               <b>   arco-dd:proposedIntervention ;<br>
+                  arco-dd:hasConservationStatus. </b>
+<br>
+<br>
 These labels already exist in the ArCo ontology, as shown by this more general query that we executed:<br>
 <br>
 PREFIX arco-dd: <a href="https://w3id.org/arco/ontology/denotative-description/">https://w3id.org/arco/ontology/denotative-description/</a> 
@@ -229,7 +234,7 @@ In this case, ChatGPT has supported us in the research of the materials: <br>
 <br>
 When proposed this <b>zero-shot prompt</b>, the answer we received was: <br>
 <br>
-<img src="ChatGPT materials2.jpeg" style=width="390" height="350"> <br>
+<img src="ChatGPT materials2.jpeg" style=width="450" height="450"> <br>
 <br>
 Then, we proceeded to ask the relationship between the materials used and the Archaeological Parks: <br>
 <br>
@@ -240,7 +245,7 @@ Finally, we asked ChatGPT to transform the information in RDF:
 <br>
 <img src="ChatGPT generated knowledge.jpeg" style=width="450" height="450">  <br>
 <br>
-<img src="ChatGPT generated knowledge answer.jpeg" style=width="450" height="450">  <br>
+<img src="ChatGPT generated knowledge answer.jpeg" style=width="550" height="550">  <br>
 <br>
 This above is an example of <b>generated knowledge</b>.
 <br>
@@ -263,11 +268,11 @@ If you want to learn more about the new triples we proposed, <button onclick="do
 <p>Then, we wanted to go into the details of the codes that ArCo assigned to each Italian region, in order to add geographical information about the archaeological sites. <br>
 In order to achieve this, we first promped Mixtral:</p>
 <br>
-<img src="Mixtral zero shot.jpeg" style=width="350" height="350">
+<img src="Mixtral zero shot.jpeg" style=width="450" height="450">
 <br>
 <p>Clearly, this answer is an example of misinterpretation; so, we tried to provide Mixtral with some more context:</p>
 <br>
-<img src="Mixtral zero shot more context.jpeg" style=width="350" height="350">
+<img src="Mixtral zero shot more context.jpeg" style=width="450" height="450">
 <br>
 <br>
 <img src="Mixtral answer zero shot.jpeg" style=width="350" height="350">
@@ -276,8 +281,8 @@ In order to achieve this, we first promped Mixtral:</p>
 <img src="Llama zero shots.jpeg" style=width="350" height="350"> <br>
 <img src="Llama code retrival.jpeg" style=width="350" height="350">
 <br>
-<img src="Gemini zero shot.jpeg" style=width="450" height="450"> <br>
-<img src="ChatGPT zero shot.jpeg" style=width="450" height="450"> <br>
+<img src="Gemini zero shot.jpeg" style=width="550" height="550"> <br>
+<img src="ChatGPT zero shot.jpeg" style=width="550" height="550"> <br>
 After these attempts, we decided to change our prompting technique and use the <b>few shots technique</b>.
 <br>
 These were the answers we got from:
@@ -294,12 +299,12 @@ Gemini: <br>
 <img src="Gemini few shots.jpeg" style=width="450" height="450">
 <br>
 ChatGPT: <br>
-<img src="ChatGPT few shots.jpeg" style=width="450" height="450"> 
+<img src="ChatGPT few shots.jpeg" style=width="550" height="550"> 
 <br>
 <br>
 We observed that ChatGPT was the only LLM to correctly answer us, as we can see from the official ISTAT list provided by the Agenzia delle Dogane e dei Monopoli <a href="https://www.adm.gov.it/portale/documents/20182/900944/Codici+ISTAT+delle+regioni.pdf/1e49f71e-d2a3-4a8c-b250-54e828312f92">website</a>
 <br>
-<img src="Istat regional code.jpeg" style=width="450" height="450">
+<img src="Istat regional code.jpeg" style=width="550" height="550">
 <br>
 <br>
 <p>We also wanted to test the <b>chain of thoughts technique</b>:</p>
