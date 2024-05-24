@@ -287,9 +287,14 @@ WHERE<br>
 }<br>
 LIMIT 100</p>
 <p> 
-To provide a reasoned estimate of the conservation status of the Parco Archeologico di Ercolano and of the proposed intervention throughout the years of the Parco archeologico delle Terme di Baia we used and tasted LLMs. <br>
-After testing all fours, we noticed that Gemini and Llama were the most accurate, while Mistral fell short in comparison with the other when it came to providing clear and concise information. Moreover, increasing the maximum number of tokens did not really make a difference in the conciseness of <br>
-the answer provided as it stopped halfway to respect such restriction. <br>
+To provide a reasoned estimate of the conservation status of the Parco Archeologico di Ercolano and of the proposed intervention throughout the years of the Parco archeologico delle Terme di Baia we used and tasted LLMs. After testing all fours, we noticed <br>
+that Gemini and Llama were the most accurate, while Mistral fell short in comparison with the other when it came to providing clear and concise information. Moreover, increasing the maximum number of tokens did not really make a difference in the conciseness of the answer <br>
+provided as it stopped halfway to respect such restriction.<br> </p> 
+For the proposed intervention part we struggled to come up with any reliable information (Llama hallucinated even with a low temperature), and since only experts can provide detailed information regarding the site we can only propose to add this label.</p> 
+ <img src="Llama last question.jpeg" style=width="250" height="250">
+   <img src="Llama last question.jpeg" style=width="250" height="250"> <br>
+   <img src="Gemini last question.jpeg" style=width="250" height="250"> <br>
+For the conservation status, with a few-shot prompt (disclosing the various types of conversation status) LLMs were able to rate the archeological park status.<br>
 First, we prompted Llama: <br> 
  <img src="Llama last image 4.jpeg" style=width="250" height="250"> 
  <img src="Llama last image 3.jpeg" style=width="250" height="250"> <br>
