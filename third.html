@@ -156,9 +156,6 @@ FILTER(REGEX(?label , "parco archeologico" , "i"))<br>
 <br>
 Furthermore, thanks to our queries, we observed some missing conncections between the following elements:
 <br>
-<br>
-<br>
-<br>
 
 <img src="Insediamento terme di Baia.png" style=width="250" height="250" ;
  
@@ -235,7 +232,27 @@ FILTER(REGEX(?label , "parco archeologico" , "i"))<br>
 <p><img src="query numero 6.jpeg" style=width="250" height="250" ; <br>
 <img src="risposta numero 6.jpeg" style=width="150" height="150" ;</p>
 <br>
-This proved that the results of the second query are less detailed.Therefore, what we would like to propose in this case is to link them thanks to the predicate <b>"a-loc:isCulturalInstituteOrSiteOf"</b> in the triple .
+<p>This proved that the results of the second query are less detailed.<br>
+Furthermore, thanks to our queries, we observed some missing conncections between the following elements:
+<br>
+
+<img src="Insediamento terme di Baia.png" style=width="250" height="250" ;
+ 
+<br>
+<br>
+We found that, in this case, this <i>insediamento</i> is placed in the <i>Parco Archeologico delle Terme di Baia</i>:
+<br>
+
+<img src="Parco Archeologico Terme di Baia.png" style=width="250" height="250" ; 
+<br>
+<br>
+Similarly, we also found out the missing relationship between: <br>
+<img src="Insediamento Ercolano.png" style=width="250" height="250">  <br>
+<br>
+And
+<br>
+<img src="Ercolano.png" style=width="250" height="250">  <br></p>
+Therefore, what we would like to propose in this case is to link them thanks to the predicate <b>"a-loc:isCulturalInstituteOrSiteOf"</b> in the triple .
 <br>
 <p style="text-align:center;">
 
@@ -247,6 +264,12 @@ a-loc:isCulturalInstituteOrSiteOf <br>
 Insediamento sparso, Parco archeologico delle terme di Baia (Età romana):  <a href="https://w3id.org/arco/resource/ArchaeologicalProperty/1500919868">https://w3id.org/arco/resource/ArchaeologicalProperty/1500919868</a> </p>
 <br>
 <br>
+<p style="background-image: url('Background.jpeg'); p style=color:red"> 
+<br>
+If you want to learn more about the new triples we proposed, <button onclick="document.location='second.html'">Click here</button>
+<br>
+<br>
+</p>
 Consulting LLMs such as ChatGPT, we asked what was the relevant information to look for when studying archaeological sites: <br>
   <img src="ChatGPT informazioni.jpeg" style=width="500" height="500" ; <br>
   <img src="ChatGPT resto delle informazioni.jpeg" style=width="350" height="350" ;<br>
@@ -307,21 +330,6 @@ Finally, we asked ChatGPT to transform the information in RDF:
 <br>
 This above is an example of <b>generated knowledge</b>.
 <br>
-<br>
-Similarly, we also found out the missing relationship between: <br>
-<img src="Insediamento Ercolano.png" style=width="250" height="250">  <br>
-<br>
-And
-<br>
-<img src="Ercolano.png" style=width="250" height="250">  <br>
-<br>
-<br>
-<p style="background-image: url('Background.jpeg'); p style=color:red"> 
-<br>
-If you want to learn more about the new triples we proposed, <button onclick="document.location='second.html'">Click here</button>
-<br>
-<br>
-</p>
 
 <p>Then, we wanted to go into the details of the codes that ArCo assigned to each Italian region, in order to add geographical information about the archaeological sites. <br>
 In order to achieve this, we first promped Mixtral:
